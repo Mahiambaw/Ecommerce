@@ -7,7 +7,7 @@ const globalErrorController= require('./controller/error-controller')
 
 const app= express();
 
-console.log(process.env.NODE_ENV , "hello")
+
 
 if (process.env.NODE_ENV === 'development'){
   

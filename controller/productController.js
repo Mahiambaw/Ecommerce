@@ -1,5 +1,4 @@
 const Products = require('../models/productModels')
-const fs = require('fs');
 const apiFeatures=require('../utils/apiFeatures')
 const catchAsync= require('../utils/catchAsync')
 const AppError = require('../utils/appError')
@@ -38,7 +37,7 @@ exports.getAllProducts = catchAsync(async(req,res, next)=>{
     .sort()
     .litmtedFields()
     .paginate()
-    console.log(api, "api")
+   
      const products = await api.query;
     res.status(200).json({
       status: 'success', 

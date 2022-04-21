@@ -7,12 +7,12 @@ class apiFeatures{
 
    filter(){
      let queryObj = {...this.reqQuery}; 
-     console.log(queryObj);
+     
      const queryExclude= ['limit','page','sort', "field"];
      queryExclude.forEach(el=> delete queryObj[el]);
        let queryStr = JSON.stringify(queryObj);
        queryStr = queryStr.replace(/\b(gte|gt|lte|lt)\b/g, (match) => `$${match}`)
-       console.log(queryStr, "api")
+       
        this.query= this.query.find(JSON.parse(queryStr))
        return this;
         
